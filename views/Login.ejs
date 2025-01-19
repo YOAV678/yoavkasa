@@ -1,16 +1,24 @@
-
-
 <title>Comunication LTD login page </title>
+
 <body>
     <h1>New Regsiter page</h1>
 
-<form onsubmit="form">
+    <form action="/Login" method="post">
 
-<label> enter username:</label> <input type="text", id="username"><br>
-<label>enter password:</label><input type="password", id="password"><br>
-    <button type="submit">Login</button>
+        <div>
+            <label for="username"> enter username:</label>
+            <input type="text" name="username" id="username" placeholder="enter username">
+        </div>
 
-</form>
+        <div>
+            <label for="password"> enter password:</label>
+            <input type="password" name="password" id="password" placeholder="enter password">
+        </div>
+
+    
+        <button type="submit">Login</button>
+
+    </form>
 
 </body><br><br>
 <a href="/Forgot_Password">I_forgot_my_password</a>
