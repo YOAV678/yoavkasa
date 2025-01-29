@@ -1,4 +1,7 @@
-
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunication_LTD - Home Page</title>
     <style>
@@ -6,40 +9,132 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
         nav {
             background-color: #333;
             overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             float: right;
             display: block;
             color: white;
-            padding: 14px 20px;
+            padding: 16px 20px;
             text-align: center;
             text-decoration: none;
+            font-size: 16px;
         }
+
         nav a:hover {
             background-color: #ddd;
             color: black;
         }
-        .container {
-            padding: 20px;
+
+        nav a.active {
+            background-color: #4CAF50;
+            color: white;
         }
+
+        .container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .section {
             margin-bottom: 40px;
         }
+
+        .section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav a {
+                float: none;
+                display: inline-block;
+                text-align: left;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -51,14 +146,14 @@
         <p>Leading communication company providing tailored internet packages</p>
     </header>
 
+    <!-- Navigation -->
     <nav>
-        <a href=http://localhost:3000/Change_Password>Change Password</a>
-        <a href=http://localhost:3000/Forgot_Password>Forgot Password</a>
-        <a href=http://localhost:3000/New_Register>New Register</a>
-        <a href=http://localhost:3000/System_Page>System Page</a>
-        <a href="http://localhost:3000/Login">Login</a>
+        <a href="http://localhost:3000/Change_Password">Change Password</a>
+        <a href="http://localhost:3000/Forgot_Password">Forgot Password</a>
+        <a href="http://localhost:3000/New_Register">New Register</a>
+        <a href="http://localhost:3000/System_Page">System Page</a>
+        <a href="http://localhost:3000/Login" class="active">Login</a>
     </nav>
-
 
     <!-- Main Content Section -->
     <div class="container">
@@ -110,3 +205,4 @@
     </footer>
 
 </body>
+</html>
