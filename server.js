@@ -111,7 +111,7 @@ app.post("/System_Page", async (request, response) => {
     }
 });
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app.post("/Change_Password", async (request, response) => {
     try {       
         const username = request.body.username1;
@@ -121,14 +121,14 @@ app.post("/Change_Password", async (request, response) => {
         const password_hash = await generateHash(password, salt);
 
         // שאלת בסיס נתונים לאימות הסיסמה הנוכחית
-        const query = `SELECT * FROM users WHERE username = '${username}' AND password_hash = '${password_hash}'`;
-        const [result] = await pool.query(query);
+        const query = `SELECT * FROM users WHERE username = ? AND password_hash = ?`;
+        const [result] = await pool.query(query, [username, password_hash]);
         
         // אם נמצא משתמש והסיסמה תקינה, אפשר לעדכן
         if ((result.length > 0) && await validatePassword(username, newpassword) === true && (password!=newpassword)){
             const newPassword_hash = await generateHash(newpassword,salt)
-            const updateQuery = `UPDATE users SET password_hash = '${newPassword_hash}' WHERE username = '${username}'`;
-            await pool.query(updateQuery);
+            const updateQuery = `UPDATE users SET password_hash = ? WHERE username = ?`;
+            await pool.query(updateQuery, [newPassword_hash, username]);
             response.status(200).send("Password changed successfully.");
         } else {
             response.status(400).send("Invalid password or password policy not met.");
